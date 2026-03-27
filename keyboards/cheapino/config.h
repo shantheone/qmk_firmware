@@ -24,9 +24,6 @@
 // #define WS2812_TRST_US 80
 #define WS2812_BYTE_ORDER WS2812_BYTE_ORDER_RGB
 
-// Pick good defaults for enabling homerow modifiers
-#define TAPPING_TERM 180
-
 #define WS2812_DI_PIN GP16   // The pin connected to the data pin of the LEDs
 #define RGBLIGHT_LED_COUNT 1 // The number of LEDs connected
 
@@ -39,7 +36,9 @@
 #define RGBLIGHT_DEFAULT_VAL 32  // Sets the default brightness value, if none has been set
 
 // Custom config
-#define FLOW_TAP_TERM 100
-#define CHORDAL_HOLD
-#define SELECT_WORD_OS_MAC
+#define TAPPING_TERM 250
 #define PERMISSIVE_HOLD
+#define FLOW_TAP_TERM 150
+#define CHORDAL_HOLD
+#define SPECULATIVE_HOLD
+#define SELECT_WORD_OS_MAC
