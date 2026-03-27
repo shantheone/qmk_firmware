@@ -36,8 +36,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define COL_SHIFTER ((uint16_t)1)
 
-static const pin_t row_pins[] = MATRIX_ROW_PINS;
-static const pin_t col_pins[] = MATRIX_COL_PINS;
+static const pin_t  row_pins[] = MATRIX_ROW_PINS;
+static const pin_t  col_pins[] = MATRIX_COL_PINS;
 static matrix_row_t previous_matrix[MATRIX_ROWS];
 
 static void select_row(uint8_t row) {
@@ -45,7 +45,9 @@ static void select_row(uint8_t row) {
     writePinLow(row_pins[row]);
 }
 
-static void unselect_row(uint8_t row) { setPinInputHigh(row_pins[row]); }
+static void unselect_row(uint8_t row) {
+    setPinInputHigh(row_pins[row]);
+}
 
 static void unselect_rows(void) {
     for (uint8_t x = 0; x < MATRIX_ROWS; x++) {
@@ -63,8 +65,8 @@ static void unselect_col(uint8_t col) {
 }
 
 static void unselect_cols(void) {
-    for (uint8_t x = 0; x < MATRIX_COLS/2; x++) {
-        setPinInputHigh(col_pins[x*2]);
+    for (uint8_t x = 0; x < MATRIX_COLS / 2; x++) {
+        setPinInputHigh(col_pins[x * 2]);
     }
 }
 
@@ -77,7 +79,7 @@ static void read_cols_on_row(matrix_row_t current_matrix[], uint8_t current_row)
     for (uint8_t col_index = 0; col_index < MATRIX_COLS / 2; col_index++) {
         uint16_t column_index_bitmask = COL_SHIFTER << ((col_index * 2) + 1);
         // Check row pin state
-        if (readPin(col_pins[col_index*2])) {
+        if (readPin(col_pins[col_index * 2])) {
             // Pin HI, clear col bit
             current_matrix[current_row] &= ~column_index_bitmask;
         } else {
@@ -92,7 +94,7 @@ static void read_cols_on_row(matrix_row_t current_matrix[], uint8_t current_row)
 
 static void read_rows_on_col(matrix_row_t current_matrix[], uint8_t current_col) {
     // Select col and wait for col selection to stabilize
-    select_col(current_col*2);
+    select_col(current_col * 2);
     wait_us(MATRIX_IO_DELAY);
 
     uint16_t column_index_bitmask = COL_SHIFTER << (current_col * 2);
@@ -108,15 +110,14 @@ static void read_rows_on_col(matrix_row_t current_matrix[], uint8_t current_col)
         }
     }
     // Unselect col
-    unselect_col(current_col*2);
+    unselect_col(current_col * 2);
 }
-
 
 void matrix_init_custom(void) {
     // initialize key pins
     unselect_cols();
     unselect_rows();
-    debounce_init(MATRIX_ROWS);
+    debounce_init();
 }
 
 void store_old_matrix(matrix_row_t current_matrix[]) {
@@ -139,7 +140,7 @@ bool matrix_scan_custom(matrix_row_t current_matrix[]) {
         read_cols_on_row(current_matrix, current_row);
     }
     // Set col, read rows
-    for (uint8_t current_col = 0; current_col < MATRIX_COLS/2; current_col++) {
+    for (uint8_t current_col = 0; current_col < MATRIX_COLS / 2; current_col++) {
         read_rows_on_col(current_matrix, current_col);
     }
 
@@ -149,4 +150,3 @@ bool matrix_scan_custom(matrix_row_t current_matrix[]) {
 
     return has_matrix_changed(current_matrix);
 }
-

@@ -28,15 +28,15 @@ uint32_t flash_led(uint32_t next_trigger_time, void *cb_arg) {
 }
 
 void keyboard_post_init_user(void) {
-    //debug_enable=true;
-    //debug_matrix=true;
-    //debug_keyboard=true;
-    //debug_mouse=true;
+    // debug_enable=true;
+    // debug_matrix=true;
+    // debug_keyboard=true;
+    // debug_mouse=true;
 
     // Store user selected rgb hsv:
-    _hue = rgblight_get_hue();
+    _hue        = rgblight_get_hue();
     _saturation = rgblight_get_sat();
-    _value = rgblight_get_val();
+    _value      = rgblight_get_val();
 
     // Flash a little on start
     defer_exec(50, flash_led, NULL);
