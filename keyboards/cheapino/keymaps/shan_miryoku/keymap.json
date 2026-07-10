@@ -4,6 +4,11 @@
     "documentation": "This file is a QMK Configurator export. You can import this at <https://config.qmk.fm>.",
     "keyboard": "cheapino",
     "keymap": "shan_miryoku",
+    "macros": [
+        [
+            "19790814"
+        ]
+    ],
     "modules": [
         "getreuer/select_word"
     ],
@@ -57,7 +62,7 @@
             "RCS(KC_TAB)",
             "RCTL(KC_TAB)",
             "RGUI(KC_RGHT)",
-            "KC_NO",
+            "QK_MACRO_0",
             "KC_LCTL",
             "KC_LALT",
             "KC_LGUI",
