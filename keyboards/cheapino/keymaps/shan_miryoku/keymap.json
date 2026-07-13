@@ -7,6 +7,9 @@
     "macros": [
         [
             "19790814"
+        ],
+        [
+            "secondmacro"
         ]
     ],
     "modules": [
@@ -100,7 +103,7 @@
             "KC_NO",
             "KC_NO",
             "KC_NO",
-            "KC_NO",
+            "QK_MACRO_1",
             "KC_LCTL",
             "KC_LALT",
             "KC_LGUI",
