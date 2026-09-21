@@ -28,10 +28,10 @@
                                                         "KC_ESC", "_______", "KC_TAB", "KC_ENT", "KC_BSPC", "KC_DEL"
       ],
       [
-        "XXXXXXX", "XXXXXXX", "XXXXXXX", "XXXXXXX", "XXXXXXX", "XXXXXXX", "XXXXXXX", "XXXXXXX", "XXXXXXX", "XXXXXXX", "XXXXXXX", "QK_MACRO_1",
-        "KC_TAB",  "KC_LCTL", "KC_LALT", "KC_LGUI", "KC_LSFT", "XXXXXXX", "MS_LEFT", "MS_DOWN", "MS_UP",   "MS_RGHT", "XXXXXXX", "XXXXXXX",
-        "XXXXXXX", "XXXXXXX", "XXXXXXX", "XXXXXXX", "XXXXXXX", "XXXXXXX", "MS_WHLL", "MS_WHLD", "MS_WHLU", "MS_WHLR", "XXXXXXX", "XXXXXXX",
-                                         "KC_ESC",  "KC_SPC", "_______",  "MS_BTN1", "MS_BTN2", "MS_BTN3"
+        "LGUI(LCTL(KC_Q))", "XXXXXXX", "XXXXXXX", "XXXXXXX", "XXXXXXX", "XXXXXXX", "XXXXXXX", "XXXXXXX", "XXXXXXX", "XXXXXXX", "XXXXXXX", "QK_MACRO_1",
+        "KC_TAB",           "KC_LCTL", "KC_LALT", "KC_LGUI", "KC_LSFT", "XXXXXXX", "MS_LEFT", "MS_DOWN", "MS_UP",   "MS_RGHT", "XXXXXXX", "XXXXXXX",
+        "XXXXXXX",          "XXXXXXX", "XXXXXXX", "XXXXXXX", "XXXXXXX", "XXXXXXX", "MS_WHLL", "MS_WHLD", "MS_WHLU", "MS_WHLR", "XXXXXXX", "XXXXXXX",
+                                             "KC_ESC",  "KC_SPC", "_______",  "MS_BTN1", "MS_BTN2", "MS_BTN3"
       ],
       [
         "RGB_M_B", "RM_VALD", "RM_VALU",  "RM_SATD", "RM_SATU", "XXXXXXX", "XXXXXXX", "XXXXXXX", "XXXXXXX", "XXXXXXX", "XXXXXXX", "QK_BOOT",
